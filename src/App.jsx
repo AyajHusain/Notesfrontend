@@ -3,6 +3,7 @@ import noteService from './service/notes'
 import {useState,useEffect} from 'react'
 import Notification from './components/Error'
 import Footer from './components/Footer'
+
 const App = () =>{
 
   const [notes,setNotes] = useState([])
@@ -18,7 +19,8 @@ const App = () =>{
      
   },[])
 
-  const notesToShow = showAll ? notes:notes.filter(note=>note.important)
+
+  const notesToShow = showAll ? notes : notes.filter(note=>note.important)
 
 
   const addNote = (event) =>{
